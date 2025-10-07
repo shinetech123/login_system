@@ -1,20 +1,33 @@
-name: Deploy to Azure
+name: Azure  Web Apps CI/CD
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
     branches:
       - main
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy to Azure Static Web App
-        uses: Azure/static-web-apps-deploy@v1
+      - uses: actions/checkout@v4
+
+      - name: Build App
+        run: |
+          
+          # Example for React:
+          # npm install
+          # npm run build
+
+      - name: Deploy to Azure web Apps
+        uses: azure/web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          azure_web_apps_api_token: ${{ secrets.AZURE_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"      
-          output_location: "/"  
+          app_location: "/" # web apps  files location 
+          output_location: "build"

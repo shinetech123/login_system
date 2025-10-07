@@ -1,13 +1,18 @@
-const form = document.querySelector("form");
+const form = document.getElementById('loginForm');
+const msg = document.getElementById('msg');
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const username = form.querySelector('input[type="text"]').value;
-  const password = form.querySelector('input[type="password"]').value;
-  
-  if(username === "" || password === "") {
-    alert("Please fill all fields");
-  } else {
-    alert(`Logged in as ${username}`);
-  }
+
+  // Show success message for any input
+  msg.textContent = "✅ Welcome successfully!";
+  msg.classList.add("show", "success");
+
+  // Remove the message after 2.5 seconds
+  setTimeout(() => {
+    msg.classList.remove("show");
+  }, 2500);
+
+  // Optional: reset form
+  form.reset();
 });

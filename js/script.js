@@ -16,3 +16,10 @@ form.addEventListener('submit', (e) => {
   // Optional: reset form
   form.reset();
 });
+
+// Example: Animate cards sequentially on load
+const cards = document.querySelectorAll('.card');
+cards.forEach((card, index) => {
+  card.style.animation = `fadeIn 0.5s ease forwards ${index * 0.3}s`;
+});
+

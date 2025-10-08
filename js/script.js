@@ -5,7 +5,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   //  message for any input
-  msg.textContent = " Welcome successfully!";
+  msg.textContent = " Try to best !";
   msg.classList.add("show", "success");
 
   // Remove the message after 2.5 seconds

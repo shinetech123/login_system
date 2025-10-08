@@ -10,8 +10,8 @@ form.addEventListener('submit', (e) => {
 
   // Remove the message after 2.5 seconds
   setTimeout(() => {
-    msg.classList.remove("show");
-  }, 2500);
+   window.location.href = "dashboard.html";
+  }, 1500);
 
   // Optional: reset form
   form.reset();

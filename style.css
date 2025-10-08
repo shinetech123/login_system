@@ -1,67 +1,113 @@
+/* Body background */
 body {
-  font-family: Arial, sans-serif;
-  background: #f0f0f5;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4; /* light gray */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
+/* Login container */
 .login-container {
-  background: #fff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login box */
+.login-box {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
   width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+.login-box h2 {
   text-align: center;
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 26px;
 }
 
-.login-container h2 {
-  color: #e3e1e4;
-  margin-bottom: 20px;
+/* Label */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+  font-weight: 500;
 }
 
-.login-container input {
+/* Input fields */
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.login-container button {
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #6c63ff; /* Canva purple */
+}
+
+/* Options (remember + forgot) */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remember {
+  color: #000;
+  font-size: 14px;
+}
+
+.forgot {
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.login-btn {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #8a2be2;
-  color: #080808;
+  background-color: #6c63ff; /* Purple */
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 12px;
   font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.login-container button:hover {
-  background: #6a0dad;
-}
-
-/* Message animation */
-#msg {
-  opacity: 0;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: opacity 0.5s ease-in-out;
-}
-#msg.show {
-  opacity: 1;
+.login-btn:hover {
+  background-color: #5848e5; /* Darker purple */
 }
 
 
-#msg.error {
-  color: red;
-}
 
 /* Dashboard Body */
 body {
